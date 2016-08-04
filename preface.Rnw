@@ -1,0 +1,8 @@
+%namne:     preface.Rnw
+%author:    Charles Carter
+%date:      August 3, 2016
+
+\chapter{Preface}
+\label{Preface}
+
+    this is the preface!

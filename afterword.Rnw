@@ -1,0 +1,8 @@
+%namne:     afterword.Rnw
+%author:    Charles Carter
+%date:      August 3, 2016
+
+\chapter{Afterword}
+\label{ch01}
+
+    this is the afterword!

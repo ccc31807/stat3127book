@@ -1,0 +1,8 @@
+%namne:     app01.Rnw
+%author:    Charles Carter
+%date:      August 3, 2016
+
+\chapter{Installing and Running \R}
+\label{installing}
+
+    this is appendix one!

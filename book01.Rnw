@@ -1,0 +1,42 @@
+% name:     book01.Rnw
+% authors:  Brian Muse and Charles Carter
+% date:     August 3, 2016
+% purpose:  to supplement STAT3127 with exercises in the R programming language
+
+\documentclass[letterpaper]{book}
+
+    \usepackage{draftwatermark}
+    \SetWatermarkFontSize{48pt}
+
+    \newcommand{\R}{\textsf{R}}
+
+	\title{Statistical Programming with Case Studies in \R}
+	\author{Brian Muse\thanks{muse\_william@columbusstate.edu} and Charles Carter\thanks{carter\_charles@columbusstate.edu}}
+	\date{\today{}}
+
+\begin{document}
+\frontmatter
+
+\maketitle
+
+\tableofcontents{}
+
+    <<include-preface, child='preface.Rnw'>>=
+    @
+
+\mainmatter
+
+    <<include-ch01, child='ch01.Rnw'>>=
+    @
+
+\appendix
+
+    <<include-app01, child='app01.Rnw'>>=
+    @
+
+\backmatter
+
+    <<include-afterword, child='afterword.Rnw'>>=
+    @
+
+\end{document}

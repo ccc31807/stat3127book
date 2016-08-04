@@ -1,0 +1,8 @@
+%namne:     ch01.Rnw
+%author:    Charles Carter
+%date:      August 3, 2016
+
+\chapter{An Introduction to the Research Process}
+\label{ch01}
+
+    this is chapter one!
