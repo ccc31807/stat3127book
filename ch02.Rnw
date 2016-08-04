@@ -1,0 +1,103 @@
+%namne:     ch02.Rnw
+%author:    Charles CarterG
+%date:      August 4, 2016
+
+\chapter{Computer-Assisted Analysis}
+\label{ch02}
+
+    Why do we need computer assisted analysis? In order to answer this question, we need to consider both what a computer does, and what a programer does.
+
+    A computer computes, or more elegantly, a computer is just a computational machine, but an immensely powerful one. To illustrate its power, assume that we have in our employ a number of super mathematicians. Assume that one mathematician can perform one computation a second, 60 computations a minute, 60 minutes an hour, for 2000 hours a year, and that our mathematician is never tired, sick, in meetings, or needs professional time. How many computations can our mathematician do in a year?
+
+    <<ch01-pre, cache=TRUE>>=
+        #computations per second
+        number.of.computations <- 1 
+        #computations per minute
+        number.of.computations <- number.of.computations * 60 
+        #computations per hour
+        number.of.computations <- number.of.computations * 60 
+        #computations per year
+        number.of.computations <- number.of.computations * 2000 
+        # our mathematician is good for
+        number.of.computations
+    @
+
+    Now, let's say that our computer is just an ordinary machine, nothing special, and that the processor runs at a clock speed of 2 gHz, or two billion computations a second. How many mathamaticians do we need to equal the speed of one ordinary computer?
+
+    <<ch01-pre-b, cache=TRUE>>=
+        number.of.mathematicians <- 2000000000 / number.of.computations
+        number.of.mathematicians
+    @
+
+    As you can see, it takes \Sexpr{number.of.mathematicians} mathematicians working for a year to perform the same number of computations that a computer can do in one second! This is amazing power, and leads us to the second question, what does a programmer do? What a programmer does is \ldots{} think. A computer is dumb, all it knows how to do is compute. A human, otherwise known as a programmer, tells the computer what to compute. Currently, we have at our fingertips incredible amounts of data. Ordinary computers have storage capacity of 100 gigabytes, and storage capacities of 1000 gigabytes are relatively common. Research computers can store terabytes ($10^{12}$ bytes), petabytes ($10^{15}$ bytes), and exabytes ($10^{18}$ bytes) of data. For these amounts of data, computer assisted analysis is an absolute prerequisite.
+
+    This chapter introduces the \R{} programming language, perhaps the most widely used computer assisted analytical software in the world.
+
+    \paragraph{Exercise:} Name two or three commonly used technologies for data analytics.
+
+    \section{The \R{} programming language}
+    \label{the R programming language}
+
+        \subsection{Invoking and quitting \R{}}
+        \label{Invoking and quitting}
+
+        This chapter assumes that you have \R{} up and running. If you do not, please read appendix \ref{installing} on page \pageref{installing}. Details of invocation differ according to the operating system you use. This tutorial assumes that you use some current version of Microsoft Windows. If you have a shortcut on our desktop, you invoke \R{} by opening the shortcut. You can also invoke \R{} via the start menu. If you choose to use an integrated development (IDE), you invoke \R{} by opening your IDE, see appendix \ref{IDEs} on page \pageref{IDEs}. If you open \R{} program on Windows, you will see the \R{} graphical user interface (GUI), a bare bones command interpreter, shown in figure \ref{ch02sec01a}. It's also possible to invoke \R{} on the command line interface (the DOS or Powershell prompt), but we will not cover this. 
+
+        \begin{figure}
+            \includegraphics[width=6in]{images/ch02sec01a.pdf}
+            \caption{\R{} GUI}
+            \label{ch02sec01a}
+        \end{figure}
+
+        You quit \R{} by typing the command \texttt{q()} at the \R{} prompt. You will see an alert box asking you whether you wish to save. You should always save your image unless you have a good reason not to. See figure \ref{ch02sec01b}. You may also give the command \texttt{q('yes')} to directly save the image, or \texttt{q('no')} to quit without saving the image. On Windows, if you save the image, \R}{} creates a file in your working directory named \texttt{.RData}. You can invoke \R{} by clicking on this link in the normal fashion, and your previous workspace will be restored. See figure \ref{ch02sec01c}.
+
+    \paragraph{Exercise:} Invoke \R{} in the usual manner, then quit \R{} saving the workspace, and invoke \R{} by clicking on the \texttt{.RData} file icon.
+    
+        \begin{figure}
+            \includegraphics[width=3in]{images/ch02sec01b.pdf}
+            \caption{\R{} quit alert}
+            \label{ch02sec01b}
+        \end{figure}
+
+        \begin{figure}
+            \includegraphics[width=4in]{images/ch02sec01c.pdf}
+            \caption{\R.data file}
+            \label{ch02sec01c}
+        \end{figure}
+
+
+        \subsection{Directory and file operations}
+        \label{Directory and file operations}
+
+
+        \subsection{Data types}
+        \label{Data types}
+
+
+        \subsection{Statistical operations}
+        \label{Statistical operations}
+
+
+    \section{\R{} packages}
+    \label{R packages}
+
+        \subsection{CRAN}
+        \label{CRAN}
+
+
+        \subsection{knitr}
+        \label{knitr}
+
+
+        \subsection{ggplot2}
+        \label{ggplot2}
+
+
+        \subsection{dplyr}
+        \label{dplyr}
+
+
+
+    \section{Example analyses}
+    \label{Example analyses
+
