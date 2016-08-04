@@ -5,6 +5,8 @@
 
 \documentclass[letterpaper]{book}
 
+    \usepackage{graphicx}
+    \usepackage{hyperref}
     \usepackage{draftwatermark}
     \SetWatermarkFontSize{48pt}
 
@@ -27,6 +29,10 @@
 \mainmatter
 
     <<include-ch01, child='ch01.Rnw'>>=
+    @
+
+
+    <<include-ch02, child='ch02.Rnw'>>=
     @
 
 \appendix
