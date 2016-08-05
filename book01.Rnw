@@ -10,6 +10,19 @@
     \usepackage{draftwatermark}
     \SetWatermarkFontSize{48pt}
 
+    \usepackage{xcolor}
+    \usepackage{listings}
+    \lstset{
+        basicstyle=\footnotesize,
+        breaklines=true,
+        keepspaces=true,
+        numbers=left,
+        numbersep=5pt,
+        numberstyle= \tiny\color{darkgray},
+        commentstyle=\color{green},
+        language = R
+    }
+
     \newcommand{\R}{\textsf{R}}
 
 	\title{Statistical Programming with Case Studies in \R}

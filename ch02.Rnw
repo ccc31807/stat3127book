@@ -44,7 +44,7 @@
         This chapter assumes that you have \R{} up and running. If you do not, please read appendix \ref{installing} on page \pageref{installing}. Details of invocation differ according to the operating system you use. This tutorial assumes that you use some current version of Microsoft Windows. If you have a shortcut on our desktop, you invoke \R{} by opening the shortcut. You can also invoke \R{} via the start menu. If you choose to use an integrated development (IDE), you invoke \R{} by opening your IDE, see appendix \ref{IDEs} on page \pageref{IDEs}. If you open \R{} program on Windows, you will see the \R{} graphical user interface (GUI), a bare bones command interpreter, shown in figure \ref{ch02sec01a}. It's also possible to invoke \R{} on the command line interface (the DOS or Powershell prompt), but we will not cover this. 
 
         \begin{figure}
-            \includegraphics[width=6in]{images/ch02sec01a.pdf}
+            \includegraphics[width=5in]{images/ch02sec01a.pdf}
             \caption{\R{} GUI}
             \label{ch02sec01a}
         \end{figure}
@@ -54,13 +54,13 @@
     \paragraph{Exercise:} Invoke \R{} in the usual manner, then quit \R{} saving the workspace, and invoke \R{} by clicking on the \texttt{.RData} file icon.
     
         \begin{figure}
-            \includegraphics[width=3in]{images/ch02sec01b.pdf}
+            \includegraphics[width=2in]{images/ch02sec01b.pdf}
             \caption{\R{} quit alert}
             \label{ch02sec01b}
         \end{figure}
 
         \begin{figure}
-            \includegraphics[width=4in]{images/ch02sec01c.pdf}
+            \includegraphics[width=3in]{images/ch02sec01c.pdf}
             \caption{\R.data file}
             \label{ch02sec01c}
         \end{figure}
@@ -69,7 +69,73 @@
         \subsection{Directory and file operations}
         \label{Directory and file operations}
 
+        We will begin a tour of \R{} with directory and file operations. These allow you to use \R{} as a command shell, which may come in handy occasionally, however, you will mostly use your operating system's file and directory manipulation facilities. Here are the commands you should run.
 
+        \begin{lstlisting}
+#get help for getwd()
+?getwd
+#list the current working directory
+getwd()
+#create a new child directory named 'testing'
+dir.create("testing")
+#change to the testing child directory
+setwd("testing")
+#create a numeric vector
+num.vec <- c(1,2,3,4,5)
+#print the num.vec
+num.vec
+#save the vector as a CSV file
+write.csv(num.vec, "my-num-vec.csv")
+#copy the file
+file.copy("my-num-vec.csv", "another-num-vec.csv")
+#list the directory contents
+dir()
+#delete the files you just created
+file.remove("my-num-vec.csv")
+file.remove("another-num-vec.csv")
+#check to see if it's still there
+dir()
+#return to the parent directory
+setwd("..")
+#see what unlink does
+?unlink
+#remove the testing directory
+unlink("testing")
+#is it still there?
+dir("testing")
+        \end{lstlisting}
+
+Let's see how this works.
+
+<<file-and-dir-manip, cache=TRUE>>=
+#list the current working directory
+getwd()
+#create a new child directory named 'testing'
+dir.create("testing")
+#change to the testing child directory
+setwd("testing")
+#create a numeric vector
+num.vec <- c(1,2,3,4,5)
+#print the num.vec
+num.vec
+#save the vector as a CSV file
+write.csv(num.vec, "my-num-vec.csv")
+#copy the file
+file.copy("my-num-vec.csv", "another-num-vec.csv")
+#list the directory contents
+dir()
+#delete the files you just created
+file.remove("my-num-vec.csv")
+file.remove("another-num-vec.csv")
+#check to see if it's still there
+dir()
+#return to the parent directory
+setwd("..")
+#remove the testing directory
+unlink("testing")
+#is it still there?
+dir("testing")
+@
         \subsection{Data types}
         \label{Data types}
 
@@ -99,5 +165,5 @@
 
 
     \section{Example analyses}
-    \label{Example analyses
+    \label{Example analyses}
 

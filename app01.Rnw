@@ -2,12 +2,12 @@
 %author:    Charles Carter
 %date:      August 3, 2016
 
-\chapter{Installing and Running \R }
+\chapter{Installing and Running \R()}
 \label{installing}
 
     this is appendix one!
 
-\chapter{\R\ Integrated Development Environments}
+\chapter{\R{} Integrated Development Environments}
 \label{IDEs}
 
     this is appendix one part b!

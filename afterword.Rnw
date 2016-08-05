@@ -3,6 +3,6 @@
 %date:      August 3, 2016
 
 \chapter{Afterword}
-\label{ch01}
+\label{Afterword}
 
     this is the afterword!
