@@ -1,0 +1,8 @@
+%namne:     ch03.Rnw
+%author:    Charles Carter
+%date:      August 6, 2016
+
+\chapter{Descriptive Statistics}
+\label{ch03}
+
+    this is chapter tmplate!

@@ -20,6 +20,7 @@
         numbersep=5pt,
         numberstyle= \tiny\color{darkgray},
         commentstyle=\color{green},
+        keywordstyle=\color{blue}\textbf,
         language = R
     }
 
@@ -42,10 +43,14 @@
 \mainmatter
 
     <<include-ch01, child='ch01.Rnw'>>=
-    @
+    
 
 
     <<include-ch02, child='ch02.Rnw'>>=
+    @
+
+
+    <<include-ch03, child='ch03.Rnw'>>=
     @
 
 \appendix

@@ -136,13 +136,124 @@ unlink("testing")
 #is it still there?
 dir("testing")
 @
-        \subsection{Data types}
-        \label{Data types}
+        \subsection{Data structures and types}
+        \label{Data structures and types}
 
+        \R{} has a number of different data structures, including vectors, matrices, lists, and data frame. We will mostly be using data frames for statistical and analytical work, but it's worthwhile to have some sort of idea for the other kinds of dta structures. Run the code in this listing.
 
-        \subsection{Statistical operations}
-        \label{Statistical operations}
+        \begin{lstlisting}
+#create a vector with four integers named 'a'
+a <- c(1,2,3,4)
+#create a vector with four integers named 'b'
+b <- c(5,6,7,8)
+#create a vector by listwise multiplication named 'c'
+c <- a * b
+#look at a, b, and c
+a
+b
+c
+#create a matrix named 'm' by row
+m <- matrix(data = c(a, b, c), nrow = 3, byrow = TRUE)
+m
+#create a matrix named 'n' by column
+n <- matrix(data = c(a, b, c), ncol = 3, byrow = FALSE)
+n
+#create three lists named 'd', 'e', 'f' and 'g'
+d <- list("Washington", "Adams", "Jefferson", "Madison")
+e <- list(1,2,3,4)
+f <- list(1788, 1796, 1800, 1808)
+#from Virginia?
+g <- list(TRUE, FALSE, TRUE, TRUE)
+#create a dataframe named 'presidents'
+presidents <- data.frame(cbind(e, d, f, g), stringsAsFactors = FALSE)
+names(presidents) <- c("order", "name", "year", "from.virginia?")
+presidents
+        \end{lstlisting}
 
+Let's see how this works.
+
+<<data-structures, cache=TRUE>>=
+#create a vector with four integers named 'a'
+a <- c(1,2,3,4)
+#create a vector with four integers named 'b'
+b <- c(5,6,7,8)
+#create a vector by listwise multiplication named 'c'
+c <- a * b
+#look at a, b, and c
+a
+b
+c
+#create a matrix named 'm' by row
+m <- matrix(data = c(a, b, c), nrow = 3, byrow = TRUE)
+m
+#create a matrix named 'n' by column
+n <- matrix(data = c(a, b, c), ncol = 3, byrow = FALSE)
+n
+#create three lists named 'd', 'e', 'f' and 'g'
+d <- list("Washington", "Adams", "Jefferson", "Madison")
+e <- list(1,2,3,4)
+f <- list(1788, 1796, 1800, 1808)
+#from Virginia?
+g <- list(TRUE, FALSE, TRUE, TRUE)
+#create a dataframe named 'presidents'
+presidents <- data.frame(cbind(e, d, f, g), stringsAsFactors = FALSE)
+names(presidents) <- c("order", "name", "year", "from.virginia?")
+presidents
+@
+
+    As a programming language, \R{} has the usual types: integers, floats, doubles, strings, Booleans, etc. \R{} contains no surprises here. However, there is one ``data type'' that may cause come confusion, \textit{factors}. Factors can be any data type, but they are most frequently strings, such as ``male'' and ``female.'' Factors are categorical variables that correspond to levels in a study. We will look at two factors next, one consisting of strings, and the other consisting of ``integers.''
+
+    \begin{lstlisting}
+#create a string vector
+sex <- c("Male", "Female", "Male", "Female", "Female", "Female", 
+    "Male", "Male", "Male", "Female", "Female", "Male", "Female", 
+    "Male", "Female", "Male")
+#look at it
+sex
+#convert it to a factor
+sex.fac <- factor(sex, levels = c("Make","Female"))
+#look at the factor
+sex.fac
+#how many of each level?
+table(sex.fac)
+#crete an ``integer'' vector
+zips <- c(31901, 31906, 31901, 31909, 31907, 31907, 31909, 31901, 31906, 31906, 31907, 31909, 31901)
+#look at zips
+zips
+#convert zips to a factor
+zips.fac <- factor(zips, levels = c(31901, 31906, 31909, 31907), labels=c("Downtown", "Wynnton", "CPS", "Lindsey Creek"))
+#lool at the zips.fac
+zips.fac
+#see how many of each exist
+table(zips.fac)
+    \end{lstlisting}
+
+    Let's see what happens when we run this.
+
+    <<factors, cache=TRUE>>=
+    #create a string vector
+    sex <- c("Male", "Female", "Male", "Female", "Female", "Female", 
+        "Male", "Male", "Male", "Female", "Female", "Male", "Female", 
+        "Male", "Female", "Male")
+    #look at it
+    sex
+    #convert it to a factor
+    sex.fac <- factor(sex, levels = c("Make","Female"))
+    #look at the factor
+    sex.fac
+    #how many of each level?
+    table(sex.fac)
+    #crete an ``integer'' vector
+    zips <- c(31901, 31906, 31901, 31909, 31907, 31907, 31909, 31901, 31906, 31906, 31907, 31909, 31901)
+    #look at zips
+    zips
+    #convert zips to a factor
+    zips.fac <- factor(zips, levels = c(31901, 31906, 31909, 31907), labels=c("Downtown", "Wynnton", "CPS", "Lindsey Creek"))
+    #lool at the zips.fac
+    zips.fac
+    #see how many of each exist
+    table(zips.fac)
+    @
 
     \section{\R{} packages}
     \label{R packages}
@@ -154,7 +265,7 @@ dir("testing")
         \subsection{knitr}
         \label{knitr}
 
-
+V
         \subsection{ggplot2}
         \label{ggplot2}
 
@@ -167,3 +278,14 @@ dir("testing")
     \section{Example analyses}
     \label{Example analyses}
 
+        \subsection{Running scripts}
+        \label{Running scripts}
+        
+
+        \subsection{Data entry}
+        \label{Data entry}
+        
+
+        \subsection{Importing data}
+        \label{Importing data}
+        

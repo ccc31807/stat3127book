@@ -1,0 +1,8 @@
+%namne:     ch00.Rnw
+%author:    Charles Carter
+%date:      
+
+\chapter{template}
+\label{ch0o}
+
+    this is chapter tmplate!
