@@ -44,7 +44,7 @@
         This chapter assumes that you have \R{} up and running. If you do not, please read appendix \ref{installing} on page \pageref{installing}. Details of invocation differ according to the operating system you use. This tutorial assumes that you use some current version of Microsoft Windows. If you have a shortcut on our desktop, you invoke \R{} by opening the shortcut. You can also invoke \R{} via the start menu. If you choose to use an integrated development (IDE), you invoke \R{} by opening your IDE, see appendix \ref{IDEs} on page \pageref{IDEs}. If you open \R{} program on Windows, you will see the \R{} graphical user interface (GUI), a bare bones command interpreter, shown in figure \ref{ch02sec01a}. It's also possible to invoke \R{} on the command line interface (the DOS or Powershell prompt), but we will not cover this. 
 
         \begin{figure}
-            \includegraphics[width=5in]{images/ch02sec01a.pdf}
+            \includegraphics[width=4.5in]{images/ch02sec01a.pdf}
             \caption{\R{} GUI}
             \label{ch02sec01a}
         \end{figure}
@@ -54,13 +54,13 @@
     \paragraph{Exercise:} Invoke \R{} in the usual manner, then quit \R{} saving the workspace, and invoke \R{} by clicking on the \texttt{.RData} file icon.
     
         \begin{figure}
-            \includegraphics[width=2in]{images/ch02sec01b.pdf}
+            \includegraphics[width=1.5in]{images/ch02sec01b.pdf}
             \caption{\R{} quit alert}
             \label{ch02sec01b}
         \end{figure}
 
         \begin{figure}
-            \includegraphics[width=3in]{images/ch02sec01c.pdf}
+            \includegraphics[width=2.7in]{images/ch02sec01c.pdf}
             \caption{\R.data file}
             \label{ch02sec01c}
         \end{figure}
@@ -211,17 +211,20 @@ sex <- c("Male", "Female", "Male", "Female", "Female", "Female",
 #look at it
 sex
 #convert it to a factor
-sex.fac <- factor(sex, levels = c("Make","Female"))
+sex.fac <- factor(sex, levels = c("Male","Female"))
 #look at the factor
 sex.fac
 #how many of each level?
 table(sex.fac)
 #crete an ``integer'' vector
-zips <- c(31901, 31906, 31901, 31909, 31907, 31907, 31909, 31901, 31906, 31906, 31907, 31909, 31901)
+zips <- c(31901, 31906, 31901, 31909, 31907, 31907, 31909, 
+    31901, 31906, 31906, 31907, 31909, 31901)
 #look at zips
 zips
 #convert zips to a factor
-zips.fac <- factor(zips, levels = c(31901, 31906, 31909, 31907), labels=c("Downtown", "Wynnton", "CPS", "Lindsey Creek"))
+zips.fac <- factor(zips, levels = c(31901, 31906, 31909, 
+    31907), labels=c("Downtown", "Wynnton", "CPS", 
+    "Lindsey Creek"))
 #lool at the zips.fac
 zips.fac
 #see how many of each exist
@@ -238,17 +241,20 @@ table(zips.fac)
     #look at it
     sex
     #convert it to a factor
-    sex.fac <- factor(sex, levels = c("Make","Female"))
+    sex.fac <- factor(sex, levels = c("Male","Female"))
     #look at the factor
     sex.fac
     #how many of each level?
     table(sex.fac)
     #crete an ``integer'' vector
-    zips <- c(31901, 31906, 31901, 31909, 31907, 31907, 31909, 31901, 31906, 31906, 31907, 31909, 31901)
+    zips <- c(31901, 31906, 31901, 31909, 31907, 31907, 31909, 
+        31901, 31906, 31906, 31907, 31909, 31901)
     #look at zips
     zips
     #convert zips to a factor
-    zips.fac <- factor(zips, levels = c(31901, 31906, 31909, 31907), labels=c("Downtown", "Wynnton", "CPS", "Lindsey Creek"))
+    zips.fac <- factor(zips, levels = c(31901, 31906, 31909, 
+        31907), labels=c("Downtown", "Wynnton", "CPS", 
+        "Lindsey Creek"))
     #lool at the zips.fac
     zips.fac
     #see how many of each exist
@@ -258,6 +264,8 @@ table(zips.fac)
     \section{\R{} packages}
     \label{R packages}
 
+        As an open technology, the \R{} language is available for anyone to examine, copy, and change. An important benefit is that anyone can contribute to \R{}, and many people have. These contributions are collected into \textit{packages} and made available for everyone, with no strings attached. Popular repositories for \R{} packages include Bioconductor,\footnote{Bioconductor provides tools for the analysis and comprehension of high-throughput genomic data. Bioconductor uses the R statistical programming language, and is open source and open development. It has two releases each year, 1211 software packages, and an active user community.}, GitHub,\footnote{GitHub contains projects in a great number of languages, \R{} included. In a way, it is a social networking site for people who write software.}, and the Comprehensive \R{} Archive Network. In this section we will take a look at CRAN and look at three popular packages.
+
         \subsection{CRAN}
         \label{CRAN}
 
@@ -265,7 +273,7 @@ table(zips.fac)
         \subsection{knitr}
         \label{knitr}
 
-V
+
         \subsection{ggplot2}
         \label{ggplot2}
 
@@ -281,7 +289,58 @@ V
         \subsection{Running scripts}
         \label{Running scripts}
         
+        You can run \R{} scripts one of four ways. First, you can enter commands at the \R{} prompt using the interactive shell. This is an excellent way to explore your data and experiment with various \R{} functions, both built-in functions and user defined functions. Second, you can run \R{} scripts as stand alone programs. This tutorial does not cover stand alone \R{} programs, although this is not an advanced topic, and such programs are commonly used in research and industry. Third, you can run \R{} scripts via the \textit{knitr} package, which was covered in section \ref{knitr} on \pageref{knitr}. Finally, you can create a text file containing a series of \R{} commands, and instruct your \R{} console to execute the commands.
 
+        Open a text editor and copy the following listing. Save the file in the same directory in which your \R{} is running as ``script01.R''. In our \R{} console, type this command: \texttt{source(``script01.R'')}. The commands you listed in your script will run. Why should you do this? If you have a series of commands that you need to execute repeatedly, or if you are working on building a script and you need to test it many times, this will allow you to automate your work flow.
+
+        \begin{lstlisting}
+print("This is script01.R")
+data <- LakeHuron
+print("LakeHuron data")
+print(data)
+sumy <- summary(LakeHuron)
+print("summary of data")
+print(sumy)
+avg <- mean(LakeHuron)
+print("mean of data")
+print(avg)
+med <- median(LakeHuron)
+print("median of data")
+print(med)
+sd <- sd(LakeHuron)
+print("standard deviation of data")
+print(sd)
+print("histogram of data")
+hist(LakeHuron)
+print("script01.R done")
+        \end{lstlisting}
+        
+        This is what you will see when you do this.
+
+        <<scropt01, cache=TRUE>>=
+print("This is script01.R")
+data <- LakeHuron
+print("LakeHuron data")
+print(data)
+sumy <- summary(LakeHuron)
+print("summary of data")
+print(sumy)
+avg <- mean(LakeHuron)
+print("mean of data")
+print(avg)
+med <- median(LakeHuron)
+print("median of data")
+print(med)
+sd <- sd(LakeHuron)
+print("standard deviation of data")
+print(sd)
+print("histogram of data")
+hist(LakeHuron)
+print("script01.R done")
+        @        
+
+        \paragraph{Exercise:} \R{} has a number of built-in data sets for exploration and learning. Enter the command \texttt{?data} and read the documentation. Then, enter the command \texttt{data}, and review the available data sets. You will find the \textit{LakeHuron} dataset here. Choose one, and create your own script to print the dataset and a summary of the dataset.
+    
         \subsection{Data entry}
         \label{Data entry}
         

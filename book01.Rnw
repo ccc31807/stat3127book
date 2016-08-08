@@ -19,7 +19,7 @@
         numbers=left,
         numbersep=5pt,
         numberstyle= \tiny\color{darkgray},
-        commentstyle=\color{green},
+        commentstyle=\color{teal},
         keywordstyle=\color{blue}\textbf,
         language = R
     }
@@ -36,6 +36,7 @@
 \maketitle
 
 \tableofcontents{}
+\tableoffigures{}
 
     <<include-preface, child='preface.Rnw'>>=
     @
