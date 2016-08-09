@@ -339,7 +339,7 @@ hist(LakeHuron)
 print("script01.R done")
         @        
 
-        \paragraph{Exercise:} \R{} has a number of built-in data sets for exploration and learning. Enter the command \texttt{?data} and read the documentation. Then, enter the command \texttt{data}, and review the available data sets. You will find the \textit{LakeHuron} dataset here. Choose one, and create your own script to print the dataset and a summary of the dataset.
+        \paragraph{Exercise:} \R{} has a number of built-in data sets for exploration and learning. Enter the command \texttt{?data} and read the documentation. Then, enter the command \texttt{data()},\footnote{Don't forget the parentheses after the word \textit{data}. The parentheses tell \R{} that you have called a function.} and review the available data sets. You will find the \textit{LakeHuron} dataset here. Choose one, and create your own script to print the dataset and a summary of the dataset.
     
         \subsection{Data entry}
         \label{Data entry}

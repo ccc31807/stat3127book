@@ -1,0 +1,81 @@
+%template for Statistical Programming, Rnw file
+%this requires a working LaTeX distribution in your path
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   don't make any changes to this code
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper]{article}
+
+    \usepackage{hyperref}
+    \usepackage[left=1in, right=1in]{geometry}
+    \newcommand{\R}{\textsf{R}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   write your name in the author slot
+%   write your email address in the thanks slot
+%   be sure to load the knitr package in your R environment before running
+%   the command to do so is >library(knitr)
+%   the command to compile this is >knit2pdf("documentname.Rnw")
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+    \title{Exercise 1}
+    \author{Charles Carter
+        \thanks{carter_charles@columbusstate.edu}}
+
+\begin{document}
+
+    \maketitle{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   write the code that will answer the questions
+%   compile this file and check it
+%   make the appropriate changes if it contains errors
+%   submit the PDF and this source file according to instructions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \section{Load Data}
+
+Go to the textbook companion website: \url{https://studysites.sagepub.com/dancey/main.htm}. The file ``Data for Figure 1\_4'' is located in Student Resources, SPSS Data Files, Chapter 1. Download that file and save it in your student directory. Then, open the file and save it to an \R{} object.
+
+<<load_data>>=
+#delete all objects in your environment (starting over)
+rm(list = ls())
+#get the name of the file by point and click
+data.file <- file.choose()
+#print the name of the data file
+data.file
+#load the foreign library to read the SPSS file
+library(foreign)
+#for read.spss() function
+data <- read.spss(data.file, to.data.frame = TRUE)
+#prints the data
+data
+#prints the names of the variables
+names(data)
+@
+
+    \section {Descriptive Statistics}
+
+Print descriptive statistics.
+
+<<descriptive_stats>>=
+#prints a summary of the data
+summary(data)
+#for descibe() function
+library(psych)
+#prints various descriptive statistics
+describe(data)
+@
+
+    \section{Plot the data}
+
+<<data_plots>>=
+#plot overweight as a function of income
+plot(x=data$Average_Income, y=data$Percentage_Overweight)
+#plot life expectancy as a function of number of cigarettes
+plot(x=data$Life_expectancy, y=data$Cigarettes)
+@
+
+\end{document}

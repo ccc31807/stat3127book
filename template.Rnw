@@ -1,0 +1,30 @@
+%template for Statistical Programming, Rnw file
+%this requires a working LaTeX distribution in your path
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   write your name in the author slot
+%   write your email address in the thanks slot
+%   be sure to load the knitr package in your R environment before running
+%   the command to do so is >library(knitr)
+%   the command to compile this is >knit2pdf("documentname.Rnw")
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper]{article}
+
+    \title{Statistical Programming Template}
+    \author{Student Name
+        \thanks{email address}}
+
+\begin{document}
+
+    \maketitle{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   write the code that will answer the questions
+%   compile this file and check it
+%   make the appropriate changes if it contains errors
+%   submit the PDF and this source file according to instructions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
