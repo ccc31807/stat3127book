@@ -21,8 +21,8 @@
 
  
     \title{Exercise 2}
-    \author{Charles Carter
-        \thanks{carter_charles@columbusstate.edu}}
+    \author{Student Name
+        \thanks{@columbusstate.edu}}
 
 \begin{document}
 
@@ -43,23 +43,23 @@ Sex = M, F, M, F, F, F, M.
 
 <<load_data>>=
 ###delete all objects in your environment (starting over)
-rm(list = ls())
+
 ##create abn empty data frame
-data1 <- data.frame(Age = integer(), Sex = character())
+
 ##enter the data using an interactive grid
-data1 <- edit(data1)
+
 #make sure Sex is a factor
-is.factor(data1$Sex)
+
 #print data
-data1
+
 #prints the names of the variables
-names(data1)
+
 #prints a summary of the data
-summary(data1)
+
 #for descibe() function
-library(psych)
+
 #prints various descriptive statistics
-describe(data1)
+
 @
 
     \section {Within Groups}
@@ -71,19 +71,19 @@ After = 160, 142, 167, 207, 192, 198, 100.
 
 <<descriptive_stats>>=
 #create three integer vectors
-Participant <- as.integer(c(1, 2, 3, 4, 5, 6, 7))
-Before <- as.integer(c(166,182, 194, 321, 190, 258, 124))
-After <- as.integer(c(160, 142, 167, 207, 192, 198, 100))
+
+
+
 #create data frame named data2
-data2 <- data.frame(cbind(Participant, Before, After))
+
 #print data2
-data2
+
 #prints a summary of the data
-summary(data2)
+
 #for descibe() function
-library(psych)
+
 #prints various descriptive statistics
-describe(data2)
+
 @
 
     \section{Within Groups, Part 2}
@@ -92,44 +92,44 @@ Create a plain text data file using a text editor like Notepad, and save the fil
 
 <<data_plots>>=
 #import your data file into R
-data3 <- read.csv("data3.csv", header = TRUE, stringsAsFactors = TRUE)
+
 #print the data
-data3
+
 #generate descriptive statistics
 #summary
-aggregate(data3$Stress, by = list(data3$Occupation), FUN = summary)
+
 #length
-aggregate(data3$Stress, by = list(data3$Occupation), FUN = length)
+
 #mean
-aggregate(data3$Stress, by = list(data3$Occupation), FUN = mean)
+
 #median
-aggregate(data3$Stress, by = list(data3$Occupation), FUN = median)
+
 #standard deviation
-aggregate(data3$Stress, by = list(data3$Occupation), FUN = sd)
+
 #variance
-aggregate(data3$Stress, by = list(data3$Occupation), FUN = var)
+
 #range
-aggregate(data3$Stress, by = list(data3$Occupation), FUN = range)
+
 #visualize the data
-boxplot(data3$Stress ~ data3$Occupation)
+
 @
 
     \section{So SPSS Exercise 2 from the textbook page 73.  See pages 506-508 in text.}
 
 <<SPSS_Ex_2>>=
 #create an integer vector pat.sat
-pat.sat <- as.integer(c(7,4,6,3,2,2,5,6,7,2))
+
 #create hosp.time vector
-hosp.time <- as.integer(c(14,12,6,1,3,6,8,6,9,1))
+
 #create data frame data4
-data4 <- data.frame(cbind(pat.sat, hosp.time))
+
 #print data
-data4
+
 #summaryze data
-summary(data4)
+
 #generate descriptive statistics
-describe(data4)
+
 #plot data
-plot(x = data4$hosp.time, y = data4$pat.sat)
+
 @
 \end{document}
